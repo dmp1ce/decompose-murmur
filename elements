@@ -1,7 +1,12 @@
 # Include common elements
 source $(_decompose-project-root)/.decompose/environment/lib/web/elements
-source $(_decompose-project-root)/elements
 
 ELEMENTS_POST_PROCESS+=( "${ELEMENTS_WEB_POST_PROCESS[@]}" )
+
+# Where to write current version information to
+PROJECT_VERSION_FILE="containers/nginx/version.txt"
+
+# Allow project elements file to override all elements
+source $(_decompose-project-root)/elements
 
 # vim:syntax=sh
